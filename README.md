@@ -1,1 +1,1 @@
-# Reflector-android
+# reflector-react-native
