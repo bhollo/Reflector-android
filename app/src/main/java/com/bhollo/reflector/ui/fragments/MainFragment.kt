@@ -87,7 +87,6 @@ class MainFragment: Fragment() {
                     interval = item.toInt()
                 }
             }
-            Log.d("test", item)
         }
 
     }
