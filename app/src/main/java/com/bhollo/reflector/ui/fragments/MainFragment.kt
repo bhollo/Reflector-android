@@ -26,8 +26,7 @@ class MainFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         startButton.setOnClickListener {
-            val activity =
-                ReflectorActivity.getIntent(safeActivity, currentColor, interval)
+            val activity = ReflectorActivity.getIntent(safeActivity, currentColor, interval)
             startActivity(activity)
         }
 

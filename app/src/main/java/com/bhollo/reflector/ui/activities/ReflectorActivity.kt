@@ -27,7 +27,7 @@ class ReflectorActivity: AppCompatActivity() {
 
         val extras = intent.extras
         color = extras?.getInt(Constants.COLOR)?: resources.getColor(R.color.bright_red)
-        interval = extras?.getInt(Constants.duration)?: 500
+        interval = extras?.getInt(Constants.INTERVAL)?: 500
 
         val brightness = 1.0f
         val lp = window.attributes
@@ -60,7 +60,7 @@ class ReflectorActivity: AppCompatActivity() {
             return Intent(context, ReflectorActivity::class.java)
                 .apply {
                     putExtra(Constants.COLOR, color)
-                    putExtra(Constants.duration, duration)
+                    putExtra(Constants.INTERVAL, duration)
                 }
         }
     }
