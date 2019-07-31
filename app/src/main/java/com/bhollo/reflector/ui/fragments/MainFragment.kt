@@ -3,8 +3,8 @@ package com.bhollo.reflector.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
+import android.widget.RadioGroup
+import android.widget.SeekBar
 import androidx.fragment.app.Fragment
 import com.bhollo.reflector.R
 import com.bhollo.reflector.extensions.inflateTo
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.main_fragment.*
 class MainFragment: Fragment() {
 
     private var currentColor = 0
-    private var interval = 0
+    private var interval = 500
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,69 +25,52 @@ class MainFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        currentColor = resources.getColor(R.color.bright_red)
+
+        radioColorGroup.setOnCheckedChangeListener(radioGroupListener)
+        intervalSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener)
         startButton.setOnClickListener {
             val activity = ReflectorActivity.getIntent(safeActivity, currentColor, interval)
             startActivity(activity)
         }
-
-        ArrayAdapter.createFromResource(
-            safeActivity,
-            R.array.colors,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            colorSpinner.adapter = adapter
-
-        }
-
-        ArrayAdapter.createFromResource(
-            safeActivity,
-            R.array.intervals,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            intervalSpinner.adapter = adapter
-        }
-
-        colorSpinner.onItemSelectedListener = listener
-        intervalSpinner.onItemSelectedListener = listener
     }
 
-    private val listener = object : AdapterView.OnItemSelectedListener {
-        override fun onNothingSelected(adapter: AdapterView<*>?) {
+    private val radioGroupListener = RadioGroup.OnCheckedChangeListener { group, checkedId ->
 
-        }
+        when(checkedId){
 
-        override fun onItemSelected(adapter: AdapterView<*>?, view: View?, postition: Int, id: Long) {
-            view?: return
-            adapter?: return
-            val item = adapter.selectedItem as String
-            val id = adapter.id
-            when(id){
-                R.id.colorSpinner ->{
-                    when(item){
-                        "blue" -> {
-                           currentColor = resources.getColor(R.color.bright_blue)
-                        }
+            R.id.radioButtonRed -> {
+                currentColor = resources.getColor(R.color.bright_red)
+            }
 
-                        "green" ->{
-                            currentColor = resources.getColor(R.color.bright_green)
-                        }
-                        "yellow" -> {
-                            currentColor = resources.getColor(R.color.bright_yellow)
-                        }
+            R.id.radioButtonBlue -> {
+                currentColor = resources.getColor(R.color.bright_blue)
+            }
 
-                        "red" ->{
-                            currentColor = resources.getColor(R.color.bright_red)
-                        }
-                    }
-                }
+            R.id.radioButtonGreen -> {
+                currentColor = resources.getColor(R.color.bright_green)
+            }
 
-                R.id.intervalSpinner -> {
-                    interval = item.toInt()
-                }
+            R.id.RadioButtonYellow -> {
+                currentColor = resources.getColor(R.color.bright_yellow)
             }
         }
+    }
+
+    private val onSeekBarChangeListener = object : SeekBar.OnSeekBarChangeListener {
+
+        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+            if (progress <= 0){
+                interval = 500
+                return
+            }
+            interval = 500/progress
+            Log.d("test", interval.toString())
+        }
+
+        override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+        override fun onStopTrackingTouch(seekBar: SeekBar?) {}
 
     }
 }
