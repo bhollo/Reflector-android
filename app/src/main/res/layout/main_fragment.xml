@@ -2,54 +2,107 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:focusable="true"
+			  android:clickable="true">
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:textColor="@android:color/black"
+			android:textStyle="bold"
+			android:text="Color"/>
 
-        <TextView android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  android:padding="16dp"
-                  android:layout_weight="1"
-                  android:text="Color"/>
+	<RadioGroup
+			android:id="@+id/radioColorGroup"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:checkedButton="@id/radioButtonRed"
+			android:layout_marginStart="16dp">
 
-        <Spinner
-                android:id="@+id/colorSpinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"/>
+		<RadioButton
+				android:id="@+id/radioButtonRed"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:buttonTint="@color/bright_red"
+				android:text="Red"/>
 
-    </LinearLayout>
+		<RadioButton
+				android:id="@+id/radioButtonGreen"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:buttonTint="@color/bright_green"
+				android:text="Green"/>
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
+		<RadioButton
+				android:id="@+id/RadioButtonYellow"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:buttonTint="@color/bright_yellow"
+				android:text="Yellow"/>
 
-        <TextView
-                android:layout_width="0dp"
-                  android:layout_height="wrap_content"
-                  android:padding="16dp"
-                  android:layout_weight="1"
-                  android:text="Interval"/>
+		<RadioButton
+				android:id="@+id/radioButtonBlue"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:buttonTint="@color/bright_blue"
+				android:text="Blue"/>
 
-        <Spinner
-                android:id="@+id/intervalSpinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"/>
+	</RadioGroup>
 
-    </LinearLayout>
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="16dp"
+			android:textColor="@android:color/black"
+			android:textStyle="bold"
+			android:text="Interval"/>
 
-<Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Start"
-        android:layout_gravity="center_horizontal"
-        android:textAllCaps="false"/>
+	<SeekBar
+			android:id="@+id/intervalSeekBar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:max="10"
+			android:layout_margin="16dp"/>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
+			android:orientation="horizontal">
+
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="Slow"/>
+
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal"
+				android:text="Medium"/>
+
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="end"
+				android:text="Fast"/>
+
+	</LinearLayout>
+
+	<Button
+			android:id="@+id/startButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:text="Start"
+			android:layout_gravity="center_horizontal"
+			android:textAllCaps="false"/>
 
 </LinearLayout>
