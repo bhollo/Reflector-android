@@ -65,7 +65,6 @@ class MainFragment: Fragment() {
                 return
             }
             interval = 500/progress
-            Log.d("test", interval.toString())
         }
 
         override fun onStartTrackingTouch(seekBar: SeekBar?) {}
