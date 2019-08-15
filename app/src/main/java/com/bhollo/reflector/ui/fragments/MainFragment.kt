@@ -10,6 +10,7 @@ import com.bhollo.reflector.R
 import com.bhollo.reflector.extensions.inflateTo
 import com.bhollo.reflector.extensions.safeActivity
 import com.bhollo.reflector.ui.activities.ReflectorActivity
+import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment: Fragment() {
@@ -29,6 +30,10 @@ class MainFragment: Fragment() {
 
         radioColorGroup.setOnCheckedChangeListener(radioGroupListener)
         intervalSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener)
+
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+
         startButton.setOnClickListener {
             val activity = ReflectorActivity.getIntent(safeActivity, currentColor, interval)
             startActivity(activity)
