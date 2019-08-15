@@ -12,7 +12,7 @@
 			android:layout_margin="16dp"
 			android:textColor="@android:color/black"
 			android:textStyle="bold"
-			android:text="Color"/>
+			android:text="@string/color"/>
 
 	<RadioGroup
 			android:id="@+id/radioColorGroup"
@@ -26,28 +26,28 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:buttonTint="@color/bright_red"
-				android:text="Red"/>
+				android:text="@string/red"/>
 
 		<RadioButton
 				android:id="@+id/radioButtonGreen"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:buttonTint="@color/bright_green"
-				android:text="Green"/>
+				android:text="@string/green"/>
 
 		<RadioButton
 				android:id="@+id/RadioButtonYellow"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:buttonTint="@color/bright_yellow"
-				android:text="Yellow"/>
+				android:text="@string/yellow"/>
 
 		<RadioButton
 				android:id="@+id/radioButtonBlue"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:buttonTint="@color/bright_blue"
-				android:text="Blue"/>
+				android:text="@string/blue"/>
 
 	</RadioGroup>
 
@@ -58,7 +58,7 @@
 			android:layout_marginTop="16dp"
 			android:textColor="@android:color/black"
 			android:textStyle="bold"
-			android:text="Interval"/>
+			android:text="@string/interval"/>
 
 	<SeekBar
 			android:id="@+id/intervalSeekBar"
@@ -78,21 +78,21 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
-				android:text="Slow"/>
+				android:text="@string/slow"/>
 
 		<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:gravity="center_horizontal"
-				android:text="Medium"/>
+				android:text="@string/medium"/>
 
 		<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:gravity="end"
-				android:text="Fast"/>
+				android:text="@string/fast"/>
 
 	</LinearLayout>
 
@@ -101,8 +101,25 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_margin="16dp"
-			android:text="Start"
+			android:text="@string/start"
 			android:layout_gravity="center_horizontal"
 			android:textAllCaps="false"/>
+
+	<FrameLayout android:layout_width="match_parent"
+	             android:layout_height="0dp"
+				 android:layout_weight="1">
+
+		<com.google.android.gms.ads.AdView
+				xmlns:ads="http://schemas.android.com/apk/res-auto"
+				android:id="@+id/adView"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="bottom"
+				ads:adSize="BANNER"
+				ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+		</com.google.android.gms.ads.AdView>
+
+	</FrameLayout>
+
 
 </LinearLayout>

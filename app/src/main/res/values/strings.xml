@@ -1,3 +1,16 @@
 <resources>
+
     <string name="app_name">Reflector</string>
+    <string name="ad_mob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="color">Color</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="yellow">Yellow</string>
+    <string name="blue">Blue</string>
+    <string name="interval">Interval</string>
+    <string name="slow">Slow</string>
+    <string name="medium">Medium</string>
+    <string name="fast">Fast</string>
+    <string name="start">Start</string>
+
 </resources>
