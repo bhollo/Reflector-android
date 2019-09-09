@@ -1,7 +1,8 @@
 <resources>
 
-    <string name="app_name">Reflector</string>
-    <string name="ad_mob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ad_mob_app_id">ca-app-pub-4139767682422943~7651062060</string>
+    <string name="ad_mob_unit_id">ca-app-pub-4139767682422943/5110612919</string>
+
     <string name="color">Color</string>
     <string name="red">Red</string>
     <string name="green">Green</string>

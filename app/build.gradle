@@ -13,6 +13,7 @@ android {
         versionCode 2
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        flavorDimensions "default"
     }
     buildTypes {
         release {
@@ -26,6 +27,19 @@ android {
     }
     androidExtensions {
         experimental = true
+    }
+
+    productFlavors{
+
+        free{
+            applicationId "com.bhollo.reflector.free"
+
+        }
+
+        paid{
+            applicationId "com.bhollo.reflector"
+
+        }
     }
 }
 
