@@ -28,7 +28,6 @@ android {
     }
     buildTypes {
         release {
-            debuggable=true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -50,7 +49,7 @@ android {
         }
 
         paid{
-            applicationId "com.bhollo.reflectorKey"
+            applicationId "com.bhollo.reflector"
             signingConfig signingConfigs.reflectorKey
         }
     }
