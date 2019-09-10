@@ -1,7 +1,6 @@
 package com.bhollo.reflector.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.RadioGroup
 import android.widget.SeekBar
@@ -9,11 +8,9 @@ import androidx.fragment.app.Fragment
 import com.bhollo.reflector.BuildConfig
 import com.bhollo.reflector.R
 import com.bhollo.reflector.databinding.MainFragmentBinding
-import com.bhollo.reflector.extensions.inflateTo
 import com.bhollo.reflector.extensions.inflateWithBinding
 import com.bhollo.reflector.extensions.safeActivity
 import com.bhollo.reflector.ui.activities.ReflectorActivity
-import com.google.android.gms.ads.AdRequest
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment: Fragment() {
