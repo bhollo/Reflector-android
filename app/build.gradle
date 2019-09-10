@@ -5,6 +5,15 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+
+    signingConfigs {
+        reflectorKey {
+            keyAlias = 'reflectorAlias'
+            storeFile file('/home/derrick/reflectorKey.jks')
+            storePassword 'reflector_tec'
+            keyPassword 'reflector_tec'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.bhollo.reflector"
@@ -14,6 +23,8 @@ android {
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         flavorDimensions "default"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -33,12 +44,13 @@ android {
 
         free{
             applicationId "com.bhollo.reflector.free"
+            signingConfig signingConfigs.reflectorKey
 
         }
 
         paid{
             applicationId "com.bhollo.reflector"
-
+            signingConfig signingConfigs.reflectorKey
         }
     }
 }
