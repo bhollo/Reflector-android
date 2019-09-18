@@ -42,6 +42,11 @@ class MainFragment: Fragment() {
             val activity = ReflectorActivity.getIntent(safeActivity, currentColor, interval)
             startActivity(activity)
         }
+
+        sosButton.setOnClickListener {
+            val activity = ReflectorActivity.getIntent(safeActivity, currentColor, interval, true)
+            startActivity(activity)
+        }
     }
 
     private val radioGroupListener = RadioGroup.OnCheckedChangeListener { group, checkedId ->

@@ -13,5 +13,6 @@
     <string name="medium">Medium</string>
     <string name="fast">Fast</string>
     <string name="start">Start</string>
+    <string name="sos">SOS</string>
 
 </resources>
