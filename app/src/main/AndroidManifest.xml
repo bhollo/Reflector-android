@@ -16,7 +16,10 @@
             android:theme="@style/AppTheme">
 
 
-        <activity android:name=".ui.activities.MainActivity">
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -29,7 +32,9 @@
 
         </activity>
 
-        <activity android:name=".ui.activities.ReflectorActivity"/>
+        <activity
+            android:name=".ui.activities.ReflectorActivity"
+            android:screenOrientation="portrait" />
 
         <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
