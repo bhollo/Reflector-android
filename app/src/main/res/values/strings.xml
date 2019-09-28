@@ -14,5 +14,8 @@
     <string name="fast">Fast</string>
     <string name="start">Start</string>
     <string name="sos">SOS</string>
+    <string name="sos_dialog_message">SOS is intended for emergency reasons. Do you want to proceed?</string>
+    <string name="proceed">Proceed</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
