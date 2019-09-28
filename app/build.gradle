@@ -64,7 +64,9 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-ads:18.2.0'
 
+    // Third party
     implementation 'testfairy:testfairy-android-sdk:1.9.13'
+    implementation 'com.afollestad.material-dialogs:core:3.1.1'
 
     // Arch Components
     implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
@@ -72,6 +74,7 @@ dependencies {
 
     kapt "com.android.databinding:compiler:3.1.4"
 
+    // Testing
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

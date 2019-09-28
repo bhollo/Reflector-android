@@ -11,6 +11,7 @@ import com.bhollo.reflector.databinding.MainFragmentBinding
 import com.bhollo.reflector.extensions.inflateWithBinding
 import com.bhollo.reflector.extensions.safeActivity
 import com.bhollo.reflector.ui.activities.ReflectorActivity
+import com.bhollo.reflector.ui.dialogs.SOSDialog
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment: Fragment() {
@@ -39,17 +40,13 @@ class MainFragment: Fragment() {
         binding.flavor = BuildConfig.FLAVOR
 
         startButton.setOnClickListener {
-            startReflectorActivity()
+            val activity = ReflectorActivity.getIntent(safeActivity, currentColor, interval, false)
+            startActivity(activity)
         }
 
         sosButton.setOnClickListener {
-           startReflectorActivity(true)
+           SOSDialog.show(safeActivity, currentColor)
         }
-    }
-
-    private fun startReflectorActivity(forSOS: Boolean = false){
-        val activity = ReflectorActivity.getIntent(safeActivity, currentColor, interval, forSOS)
-        startActivity(activity)
     }
 
     private val radioGroupListener = RadioGroup.OnCheckedChangeListener { group, checkedId ->
