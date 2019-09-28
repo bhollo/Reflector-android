@@ -106,7 +106,7 @@ class ReflectorActivity: AppCompatActivity() {
 
     companion object{
 
-        fun getIntent(context: Context, color: Int, duration: Int, forSOS: Boolean = false): Intent{
+        fun getIntent(context: Context, color: Int, duration: Int = 0, forSOS: Boolean = false): Intent{
             return Intent(context, ReflectorActivity::class.java)
                 .apply {
                     putExtra(Constants.COLOR, color)
